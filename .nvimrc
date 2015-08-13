@@ -36,6 +36,15 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 call plug#end()
 
+"----------------------------------------------
+"                  General
+"----------------------------------------------
+" Sets how many lines of history VIM has to remember
+set history=700
+
+" set leader key
+let mapleader = ","
+let g:mapleader = ","
 
 "----------------------------------------------
 "                  Shortcuts 
@@ -44,9 +53,6 @@ iab #d #define
 iab #i #include 
 iab /**/ /********************************************************************/ iab syso System.out.println(
 iab syso System.out.println(
-
-"set leader key
-let mapleader = ","
 
 " Get rid of highlited search
 nmap <silent> ,/ :nohlsearch<CR>
@@ -59,14 +65,9 @@ nmap <leader>ne :NERDTree<cr>
 
 " Open new vertial split
 nnoremap <leader>v <C-W>v
+
 " Open new horizontal split
 nnoremap <leader>s <C-W>s
-
-" Skip into message
-set shortmess+=I
-
-" Set text wrap
-set wrap
 
 " Easy window navigation
 map <C-h> <C-w>h
@@ -74,7 +75,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l 
 
-" resizing windows
+" Resizing windows
 map > <C-W>>
 map < <C-W><
 map _ <C-W>- 
@@ -85,12 +86,14 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-b> :bn<CR>
 map <C-v> :bp<CR>
 
-" playing hard mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" Terminal mode navigation
+:tnoremap <Esc> <C-\><C-n>
 
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" jk is escape
+inoremap jk <esc>
 "----------------------------------------------
 "                  Settings
 "----------------------------------------------
@@ -113,3 +116,37 @@ set hlsearch
 
 " Set auto indenting
 set autoindent
+
+" Skip into message
+set shortmess+=I
+
+" Set text wrap
+set wrap
+
+" playing hard mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Not crap search 
+set incsearch
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+"Always show current position
+set ruler
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
