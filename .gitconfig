@@ -1,0 +1,30 @@
+[core]
+	editor = nvim
+	excludesfile = /home/indra/.gitignore
+[user]
+	name = indra prasetyo
+	email = indra.prasetyo@calgaryscientific.com
+[alias]
+	# Show all aliases
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+	# Show last commit
+	last = log -1 HEAD
+	# Savepoint and quick WIP commit
+	save = !git add -A && git commit -m 'SAVEPOINT'
+    wip = commit -am "WIP" 
+	# Undo last commit
+	undo = reset HEAD~1 --mixed
+	# Fix last commit
+    amend = commit -a --amend
+	# so pretty pls respond
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	# Search for filepath
+	fp = "!git ls-files | grep -i"
+	# Search through all files
+	grep = grep -Ii
+	# Show all branches
+	br = branch -av
+	# Remove deleted files
+	rmv = !git ls-files -z --deleted | xargs -0 git rm
+

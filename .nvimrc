@@ -29,6 +29,8 @@ set rtp+=~/.nvim/autoload/plug.vim
 call plug#begin()
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/syntastic'
+Plug 'whatyouhide/vim-gotham'
+Plug 'flazz/vim-colorschemes'
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-airline'
@@ -45,6 +47,7 @@ set history=700
 " set leader key
 let mapleader = ","
 let g:mapleader = ","
+colorscheme gotham256
 
 "----------------------------------------------
 "                  Shortcuts 
@@ -70,16 +73,16 @@ nnoremap <leader>v <C-W>v
 nnoremap <leader>s <C-W>s
 
 " Easy window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l 
+map <Space>h <C-w>h
+map <Space>j <C-w>j
+map <Space>k <C-w>k
+map <Space>l <C-w>l 
 
 " Resizing windows
-map > <C-W>>
-map < <C-W><
-map _ <C-W>- 
-map + <C-W>+
+map <C-l> <C-W>>
+map <C-h> <C-W><
+map <C-k> <C-W>- 
+map <C-j> <C-W>+
 
 " NERDTree stuff
 map <C-n> :NERDTreeToggle<CR>
@@ -109,7 +112,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Set fontsize and font
-:set guifont=Inconsolata\ 10 
+:set guifont=PragmataPro\ 10 
 
 " Highlight search results
 set hlsearch
