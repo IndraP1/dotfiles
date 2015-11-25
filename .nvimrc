@@ -7,6 +7,7 @@ set nocompatible
 filetype off
 
 syntax on
+set ignorecase
 set nu
 colorscheme ron
 
@@ -54,7 +55,7 @@ colorscheme gotham256
 "----------------------------------------------
 iab #d #define
 iab #i #include 
-iab /**/ /********************************************************************/ iab syso System.out.println(
+iab /**/ /********************************************************************/ 
 iab syso System.out.println(
 
 " Get rid of highlited search
@@ -146,10 +147,10 @@ nnoremap j gj
 nnoremap k gk
 
 " move to beginning/end of line
-nnoremap B ^
-nnoremap E $
+"nnoremap B ^
+"nnoremap E $
 
 " $/^ doesn't do anything
-nnoremap $ <nop>
-nnoremap ^ <nop>
+"nnoremap $ <nop>
+"jnoremap ^ <nop>
 
