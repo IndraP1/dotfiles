@@ -32,6 +32,12 @@ Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/syntastic'
 Plug 'whatyouhide/vim-gotham'
 Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'godlygeek/tabular'
+Plug 'Raimondi/delimitMate'
+
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-airline'
