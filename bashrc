@@ -18,7 +18,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias back='cd $OLDPWD'
 
-alias sobash='source .bashrc'
+alias sobash='source ~/.bashrc'
+alias edbash='vim ~/.bashrc'
 alias root='sudo su'
 alias debugshell='set -o nounset -o; set -o xtrace'
 
