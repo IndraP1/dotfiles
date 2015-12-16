@@ -1,0 +1,18 @@
+= Dotfile README
+
+== Overview
+
+This repository contains my dot configuration files for vim/nvim, screen, bash, and git (gitignore and gitconfig). 
+Note that a lot of the settings I use might look weird.
+A lot of this is due to the fact that I uses a Kinesis Freestyle keyboard and it's _"optimized"_ for the key placement.
+Basically this is the best set of rc files you'll ever find.
+
+== Installing
+
+. Change permissions for `install.sh`
++
+`chmod +x install.sh`
+
+. Run install script to create symbolic links.
++
+`./install.sh`
