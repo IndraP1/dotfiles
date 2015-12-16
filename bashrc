@@ -1,6 +1,8 @@
 source "$HOME/.rvm/scripts/rvm"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export GOPATH=$HOME/golib
+export GOROOT="/usr/lib/go"
 
 #Settings
 #/********************************************************************/
