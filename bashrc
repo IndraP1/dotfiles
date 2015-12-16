@@ -25,10 +25,10 @@ alias edbash='vim ~/.bashrc'
 alias root='sudo su'
 alias debugshell='set -o nounset -o; set -o xtrace'
 
-alias install='apt-get install'
-alias update='apt-get update'
-alias upgrade='apt-get upgrade'
-alias purge='apt-get purge'
+alias install='sudo apt-get install'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias purge='sudo apt-get purge'
 alias chrome='chromium-browser'
 alias vim='nvim'
 
@@ -80,3 +80,7 @@ function swap()
     mv $TMPFILE "$2"
 }
 
+if [ "$TERM" == "xterm" ]; then
+    # No it isn't, it's gnome-terminal
+    export TERM=xterm-256color
+fi
