@@ -7,6 +7,7 @@ export GOROOT="/usr/lib/go"
 #Settings
 #/********************************************************************/
 export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
+set -o vi
 
 #Aliases
 #/********************************************************************/
@@ -15,13 +16,14 @@ alias dfh='df -kTh'
 
 alias systems='cd ~/CSI/systems'
 alias docs='cd ~/CSI/documentation'
+alias ans='cd ~/CSI/ansible-playbooks'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias back='cd $OLDPWD'
 
 alias sobash='source ~/.bashrc'
-alias edbash='vim ~/.bashrc'
+alias edbash='nvim ~/.bashrc'
 alias root='sudo su'
 alias debugshell='set -o nounset -o; set -o xtrace'
 
@@ -30,7 +32,8 @@ alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias purge='sudo apt-get purge'
 alias chrome='chromium-browser'
-alias vim='nvim'
+alias nim='nvim'
+alias snim='sudo nvim'
 
 
 #Functions
@@ -67,8 +70,7 @@ function maketar() {
 	tar cvzf "${1%%/}.tar.gz"  "${1%%/}/";
 }
 
-function swap()
-{ 
+function swap() { 
     local TMPFILE=tmp.$$
 
     [ $# -ne 2 ] && echo "swap: 2 arguments needed" && return 1
@@ -78,6 +80,10 @@ function swap()
     mv "$1" $TMPFILE
     mv "$2" "$1"
     mv $TMPFILE "$2"
+}
+
+function bak() {
+	cp "$1" "$1".bak
 }
 
 if [ "$TERM" == "xterm" ]; then

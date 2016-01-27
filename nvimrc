@@ -25,6 +25,14 @@ let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_asciidoc_asciidoc_exec = 'asciidoctor'
 let g:airline#extensions#tabline#enabled = 1
 
+"======================ctags=========================
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" set tags+=/home/indra/tags/tagslocinc
+" set tags+=/home/indra/tags/tagsopencv
+set tags+=./tags,/home/indra/tags/tagsc++,/home/indra/tags/tagsopencv,/home/indra/tags/tagsinclude
+" set tags+=./tags 
+
+let g:ycm_global_ycm_extra_conf = "/home/indra/.nvim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 " ------------------------------- Vim-Plug -------------------------------
 set rtp+=~/.nvim/autoload/plug.vim
 call plug#begin()
@@ -37,6 +45,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
+Plug 'avakhov/vim-yaml'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -93,8 +103,8 @@ map <C-j> <C-W>+
 
 " NERDTree stuff
 map <C-n> :NERDTreeToggle<CR>
-map <C-b> :bn<CR>
-map <C-v> :bp<CR>
+" map <C-b> :bn<CR>
+" map <C-v> :bp<CR>
 
 " Terminal mode navigation
 :tnoremap <Esc> <C-\><C-n>
@@ -139,9 +149,6 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
-" Not crap search 
-set incsearch
-
 " Show matching brackets when text indicator is over them
 set showmatch
 
@@ -151,6 +158,19 @@ set ruler
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+ 
+" Enables spell check for adoc files
+autocmd BufEnter *.adoc setlocal spell spelllang=en_us 
+autocmd BufEnter *.asciidoc setlocal spell spelllang=en_us 
+
+" Search as characters are entered
+set incsearch          
+
+" Igonore case sentivity
+set ignorecase          
+
+" Use case if CAPS character is used
+set smartcase           
 
 " move to beginning/end of line
 "nnoremap B ^
